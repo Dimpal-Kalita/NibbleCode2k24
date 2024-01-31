@@ -78,8 +78,8 @@ int main(){
  
 fast_io;
  
-freopen("i.txt", "r", stdin);
-freopen("o.txt", "w", stdout);
+// freopen("i.txt", "r", stdin);
+// freopen("o.txt", "w", stdout);
  
 ll q=1;
 // cin>>q;
