@@ -1,68 +1,72 @@
-/**
- * 
- * author: Dimpal Kalita
- * date: 28/01/2024 13:24:31
- * 
- */
-
-#include<bits/stdc++.h>
+/* Trilasha Mazumder */
+ 
+#include <bits/stdc++.h>
 using namespace std;
-
-#define md                  1000000007
-#define pb                  push_back
-#define endl                " \n"
-#define F                   first
-#define S                   second
-#define sz(x)               (int)(x).size()   
-#define inp(v)              for(auto &x: v) cin>>x  
-#define all(x)              (x).begin(), (x).end()
-#define rep(i, a, b)        for (int i = a; i < (b); ++i)
-#define fast_io             cin.tie(0)->sync_with_stdio(0);cin.exceptions(cin.failbit);
-
-using ll  = long long;
-using ull = unsigned long long;
-using lld = long double;
-using pii = pair<int,int>;
-using pll = pair<ll,ll>;
-using vl  = vector<ll>;
-using vi  = vector<int>;
-
-
-void dk(){
-      ll n,x;cin>>n>>x;
-      vl v(n);
-      rep(i,0,n){
-        cin>>v[i];
-      }
-      sort(all(v));
-      multiset<ll>st;
-      int ans=0;
-      for( int i=0,j=0;i<n;i++){
-        st.insert(v[i]);
-        while(j<i and (*st.rbegin())-(*st.begin())>2*x){
-          //cout<<i<<" "<<" "<<j<<" >"<<(*st.rbegin())-(*st.begin())<<endl;
-          st.erase(st.find(v[j]));
-          j++;
+           
+#define ll                    long long
+#define ld                    long double
+#define pb                    push_back
+#define lb                    lower_bound
+#define ub                    upper_bound
+#define ff                    first
+#define ss                    second
+#define maxpq                 priority_queue <ll> pq;
+#define minpq                 priority_queue <ll, vector<ll>, greater<ll> > pq; 
+#define inpv(v)               for(auto &x: v) cin>>x;
+#define fr(i,n)               for (ll i=0;i<n;++i)
+#define all(str)              str.begin(), str.end()
+#define pll                   pair<ll,ll>
+#define printv(v)             for(auto &i: v){cout << i << " ";} cout << endl;
+#define printmap(mp)          for(auto &i: mp){cout << i.first << " "<<i.second<<endl;}
+#define printset(st)          for(auto &i: st){cout << i << " ";} cout << endl;
+#define line                  cout<<"----------------------------------------"<<endl;
+#define arrow                 cout<<"--->";
+#define debugmap(mp)          for(auto &i: mp){cout << i.ff << "-->" << i.ss <<endl;} cout << endl;
+#define debugset(st)          for(auto &i: st){cout << i << " ";} cout << endl;
+#define fast_io               ios_base::sync_with_stdio(false);cin.tie(NULL);
+#define sp(x)                 fixed<<setprecision(x)
+#define PI                    3.141592653589793238
+#define bpl(n)                __builtin_popcountll(n);
+#define md                    998244353
+#define modval                1000000007
+//#define endl                " \n"
+/*----------------------------------------------------------------------------------------------------------- */
+// insead of bpow use shift operators when b=2 to avoid tle 
+// do not perform more than one optimal choice/ops in a single step/loop otherwise break your head with WA
+ 
+ 
+ 
+ 
+ 
+void solve(){
+    ll n,x;
+    cin>>n>>x;
+    vector<ll> v(n);
+    inpv(v);
+    sort(all(v));
+    ll ans=0;
+    ll j=0;
+    for(ll i=0;i<n;++i){
+        while(j<n && (v[i]-v[j])>2*x){
+            j++;
         }
         ans=max(ans,i-j+1);
-      }
-      cout<<ans<<endl;
+    }
+    cout<<ans<<endl;
 }
-
-
-
-int main()
-{ 
-    fast_io;
-    string x="10";
-    string in="TLE/input"+x+".txt";
-    string out="TLE/output"+x+".txt";
-    freopen(in.c_str(),"r+",stdin); 
-    freopen(out.c_str(),"w+",stdout); 
-    int n=1;
-    cin>>n;
-    for(int i=0;i<n;i++){
-    dk();
-   }
-  return 0;
+ 
+ 
+int main(){
+ 
+fast_io;
+ 
+// freopen("input.txt", "r", stdin);
+// freopen("output.txt", "w", stdout);
+ 
+ll q=1;
+cin>>q;
+for(ll i=0;i<q;i++){
+    solve();
+}
+    return 0;
 }
