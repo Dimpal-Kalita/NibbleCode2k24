@@ -107,22 +107,16 @@ void makeTest(string filename) {
         printf("Error!");
         exit(1);
     }
-    long long n=5000;
-    fprintf(fptr, "%lld\n", n);
-    for(int i=0;i<n;i++){
-        long long l=rand(1e9-1e5,1e9);
-        fprintf(fptr, "%lld\n", l);
-    }
-
+    fprintf(fptr, "%lld %lld\n",rand(1,1e6),rand(1,1e6));
     fclose(fptr);
 }
 
 
 signed main()
 {
-   int n=1;
+   int n=6;
    for(int i=1;i<=n;i++){
-       string s="cp/"+toString(i);
+       string s="basic/in0"+toString(i);
     //    cout<<s<<endl;
        makeTest(s.c_str());
    }

@@ -99,7 +99,7 @@ string toString(int n) {
     return s; 
 }
 
-long long x=5e5;
+long long x=2;
 void makeTest(string filename) {
     FILE *fptr;
     fptr = fopen(filename.c_str(), "w+");
@@ -107,11 +107,11 @@ void makeTest(string filename) {
         printf("Error!");
         exit(1);
     }
-    long long n=5000;
+    long long n=1e5;
     fprintf(fptr, "%lld\n", n);
     for(int i=0;i<n;i++){
-        long long l=rand(1e9-1e5,1e9);
-        fprintf(fptr, "%lld\n", l);
+        long long l=rand(1e5,1e7);
+        fprintf(fptr, "%lld\n", x++);
     }
 
     fclose(fptr);
@@ -122,7 +122,7 @@ signed main()
 {
    int n=1;
    for(int i=1;i<=n;i++){
-       string s="cp/"+toString(i);
+       string s="basic/in.txt";
     //    cout<<s<<endl;
        makeTest(s.c_str());
    }

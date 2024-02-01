@@ -97,6 +97,8 @@ int main()
 { 
     fast_io;
     PreCalc(N);
+     freopen("basic/in.txt","r+",stdin);
+     freopen("basic/out.txt","w+",stdout);
     int n=1;
     cin>>n;
     for(int i=0;i<n;i++){
