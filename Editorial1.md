@@ -30,9 +30,9 @@ Since by default every programming language returns the floor in divison we can 
 ### Easy version:
 In this version, the constraints on n is 1<=n<=1e6. Thus we can 
 
-
-
-
+As there are only $2n-1$ possible diameters, we can calculate and store the endpoints of each diameter. Since the endpoints will be increasing only, we can binary search the diameter a number belongs to. The endpoints of the diameter follow the trend of increasing by the $i^{th}$ till $\frac{n}{2}$, then increase by $\frac{n}{2}-i$. For example, as shown in the diagram, the series is:
+    1, 3, 6, 10, 15, 19, 22, 24, 25
+We can binary search any value in this series to find the diameter it belongs to.
 
 <details>
     <summary>Code</summary>
