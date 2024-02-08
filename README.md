@@ -38,13 +38,12 @@ Since by default every programming language returns the floor in divison we can 
 
 ## P1 & P3) Find the Diagonal (Easy & Hard)
 
-### Easy version:
-In this version, the constraints on n is 1<=n<=1e6. Thus we can 
+Pre-requisites: Math and Binary Search
 
-As there are only $2n-1$ possible diameters, we can calculate and store the endpoints of each diameter. Since the endpoints will be increasing only, we can binary search the diameter a number belongs to. The endpoints of the diameter follow the trend of increasing by the $i^{th}$ till $\frac{n}{2}$, then increase by $\frac{n}{2}-i$. For example, as shown in the diagram, the series is:
+### Easy version:
+In this version, the constraints on n is 1<=n<=1e6. So as there are only $2n-1$ possible diameters, we can calculate and store the endpoints of each diameter. Since the endpoints will be increasing only, we can binary search the diameter that a number belongs to. The endpoints of the diameter follow the trend of increasing by the $i^{th}$ till $\frac{n}{2}$, then increase by $\frac{n}{2}-i$. For example, as shown in the diagram, the series is:
     1, 3, 6, 10, 15, 19, 22, 24, 25
 We can binary search any value in this series to find the diameter it belongs to.
-
 
 
 <details>
@@ -73,7 +72,9 @@ We can binary search any value in this series to find the diameter it belongs to
 
 
 ### Hard Version:
-In this version, the constraints on n is 1<=n<=1e9.
+In this version, the constraints on n is 1<=n<=1e9. 
+Since the constraints are high, so it won't be possible to store the endpoints of the diameter unlike the easy version. However, we can still use the concept of binary search on the total diagonals.
+ If we observe properly, the right corners of the matrix are actually the sum of natural numbers uptil the middle diagonal but after the middle diagonal also, it follows a particular pattern. So following the same pattern, we can set the limits of binary search from 1 to 2*n-1 since its the max number of diagonals any square matrix can have. Then, for every possible diagonal number (mid) we try to find the number at its rightmost corner(rc) and then if the number(num) is less than or equal to rc, we set the ans to mid and further reduce the search space by lowering the upper limit to mid-1 and for the opposite case, we just simply change low to mid+1 and then continue the search.
 
 <details>
     <summary>Code</summary>
