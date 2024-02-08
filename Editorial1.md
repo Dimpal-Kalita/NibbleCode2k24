@@ -4,10 +4,11 @@ Since by default every programming language returns the floor in divison we can 
 
 
 
+
 <details>
     <summary>Code</summary>
 
-    ```cpp
+```cpp
     #include<bits/stdc++.h>
     using namespace std;
     #define int long long
@@ -17,7 +18,7 @@ Since by default every programming language returns the floor in divison we can 
         cout<<n/m<<endl;
         return 0;
     }
-    ```
+```
     
 </details>
 
@@ -34,7 +35,7 @@ we can find the junction with the maximum number of apples from the root, by per
  friend. In addition, the junction selected by each path will always be a leaf (unless there are no apples currently on the tree). To determine the order of the leaves, we can do a depth first search from the root, to determine the depth of each leaf. From there, we can go through the leaves in non-increasing order of depth and follow the parent and mark the junctions as visited, until we reach a vertex that has already been visited. From here, we know that all other vertices on the path to the root have been visited. The order of leaves can be determined by selecting the 
  largest leaves in order, based on the number of vertices it visited for the first time on the path to the root (which can be done in linear time in counting sort, though this was not required). Now, we can determine the answer for each friend.
 
-<detaila>
+<details>
     <summary> Code </summary>
 
 ```cpp
