@@ -3,8 +3,10 @@ Since every bird must receive at least M nibbles of biscuit, NibbleCoder can onl
 Since by default every programming language returns the floor in divison we can just return $\frac{N}{M}$ as answer.
 
 
+
 <details>
     <summary>Code</summary>
+
     ```cpp
     #include<bits/stdc++.h>
     using namespace std;
@@ -16,6 +18,7 @@ Since by default every programming language returns the floor in divison we can 
         return 0;
     }
     ```
+    
 </details>
 
 
@@ -32,54 +35,56 @@ we can find the junction with the maximum number of apples from the root, by per
  largest leaves in order, based on the number of vertices it visited for the first time on the path to the root (which can be done in linear time in counting sort, though this was not required). Now, we can determine the answer for each friend.
 
 <detaila>
-<summary> Code </summary>
-void dk(){
-     ll n,m,k;
-     cin>>n>>m>>k;
-     vector<vl>adj(n+1);
-     rep(i,1,n){
-          ll x;
-          cin>>x;
-          adj[i+1].pb(x);
-          adj[x].pb(i+1);
-     }
-     vector<ll>depth(n+1),par(n+1);
-     function<void(ll,ll,ll)>dfs=[&](ll u,ll p,ll d){
-          depth[u]=d;
-          par[u]=p;
-          for(auto v:adj[u]){
-               if(v!=p){
-                    dfs(v,u,d+1);
-               }
-          }
-     };
-     dfs(1,0,1);
-     vector<pll>v;
-     rep(i,1,n+1){
-          if(adj[i].size()==1 and i!=1) v.pb({depth[i],i});
-     }
-     sort(all(v),greater<pll>());
-     vector<ll>ans(n+1),vis(n+1);
-     for(auto i:v){
-          ll u=i.S;
-          ll cnt=0;
-          while(u!=0 and !vis[u]){
-               cnt++;
-               vis[u]=1;
-               u=par[u];
-          }
-          ans[i.S]=cnt;
-     }
-     sort(all(ans),greater<ll>());
-     ans.resize(m+1);
-     rep(i,0,m){
-          if(i>=k){
-               cout<<ans[i%k]<<endl;
-          }else{
-               cout<<ans[i]<<endl;
-          }
-     }
-}
+    <summary> Code </summary>
+
+```cpp
+    void dk(){
+        ll n,m,k;
+        cin>>n>>m>>k;
+        vector<vl>adj(n+1);
+        rep(i,1,n){
+            ll x;
+            cin>>x;
+            adj[i+1].pb(x);
+            adj[x].pb(i+1);
+        }
+        vector<ll>depth(n+1),par(n+1);
+        function<void(ll,ll,ll)>dfs=[&](ll u,ll p,ll d){
+            depth[u]=d;
+            par[u]=p;
+            for(auto v:adj[u]){
+                if(v!=p){
+                        dfs(v,u,d+1);
+                }
+            }
+        };
+        dfs(1,0,1);
+        vector<pll>v;
+        rep(i,1,n+1){
+            if(adj[i].size()==1 and i!=1) v.pb({depth[i],i});
+        }
+        sort(all(v),greater<pll>());
+        vector<ll>ans(n+1),vis(n+1);
+        for(auto i:v){
+            ll u=i.S;
+            ll cnt=0;
+            while(u!=0 and !vis[u]){
+                cnt++;
+                vis[u]=1;
+                u=par[u];
+            }
+            ans[i.S]=cnt;
+        }
+        sort(all(ans),greater<ll>());
+        ans.resize(m+1);
+        rep(i,0,m){
+            if(i>=k){
+                cout<<ans[i%k]<<endl;
+            }else{
+                cout<<ans[i]<<endl;
+            }
+        }
+    }
 ```
 </details>
 
@@ -106,6 +111,7 @@ Thus, we can precalculate the value of $\left\lfloor \frac{m}{j} \right\rfloor$ 
 
 <details>
 <summary> Code </summary>
+
 ```cpp
 ll find(ll n){
      auto calc=[&](ll n,ll x)->ll{
