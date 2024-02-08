@@ -19,7 +19,6 @@ Since by default every programming language returns the floor in divison we can 
         return 0;
     }
 ```
-    
 </details>
 
 
@@ -27,7 +26,7 @@ Since by default every programming language returns the floor in divison we can 
 ## Game on a Tree
 
 ### Brute Approach
-we can find the junction with the maximum number of apples from the root, by performing a depth first search from the root junction. Once again, we will have to mark the junctions on the path to the root to become inactive for $K$ minutes. We will do this for each friend.
+we can find the junction with the maximum number of tokens from the root, by performing a depth first search from the root junction. Once again, we will have to mark the junctions on the path to the root to become inactive for $K$ minutes. We will do this for each friend.
 
 ### Optimal Approach
  A key observation is that the $i^{th}$
