@@ -10,6 +10,7 @@
 
 ```
 # EDITORIAL FOR NIBBLE CODE 2K24
+### [CONTEST LINK](https://assessment.hackerearth.com/challenges/new/college/nibble-code-test/)
 #### Problem Setters: Dimpal Kalita, Trilasha Mazumder
 
 ## P0) Nibble Code
