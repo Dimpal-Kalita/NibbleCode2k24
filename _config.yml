@@ -3,5 +3,11 @@ plugins:
 relative_links:
   enabled: true
   collections: true
+highlighter: rouge
+
 include:
-  - README.md 
+  - README.md
+
+kramdown:
+  math_engine: mathjax
+  syntax_highlighter: rouge 
