@@ -11,8 +11,7 @@ Since by default every programming language returns the floor in divison we can 
 ```cpp
     #include<bits/stdc++.h>
     using namespace std;
-    #define int long long
-    int32_t main(){
+    int main(){
         int n,m;
         cin>>n>>m;
         cout<<n/m<<endl;
