@@ -9,11 +9,15 @@
 │   ├── Others -> for other cases
 
 ```
+### [CONTEST URL](https://www.hackerearth.com/nibble-code-test)
+
 # EDITORIAL FOR NIBBLE CODE 2K24
 ### [CONTEST LINK](https://assessment.hackerearth.com/challenges/new/college/nibble-code-test/)
 #### Problem Setters: Dimpal Kalita, Trilasha Mazumder
 
 ## P0) Nibble Code
+
+Pre-requisites: Math
 
 Since every bird must receive at least M nibbles of biscuit, NibbleCoder can only satisfy  $ceil(\frac{N}{M})$ birds.
 Since by default every programming language returns the floor in divison we can just return $\frac{N}{M}$ as answer.
@@ -120,6 +124,8 @@ void solve(){
 
 ## P2) Prodigy Kid
 
+Pre-requisites: Math and Binary Search
+
 If you can somehow calculate the $\sum_{j=1}^m \left\lfloor \frac{m}{j} \right\rfloor$
 in a time complexity $< O(m)$, the problem transforms into a simple Precalculation problem.
 
@@ -206,6 +212,8 @@ We actually need to find out the maximum length of any subsequence of the given 
 </details>
 
 ## P5) Game on a Tree
+
+Pre-requisites: Graph,DFS, BFS, Greedy, Sorting
 
 ### Brute Approach
 we can find the junction with the maximum number of tokens from the root, by performing a depth first search from the root junction. Once again, we will have to mark the junctions on the path to the root to become inactive for $K$ minutes. We will do this for each friend.

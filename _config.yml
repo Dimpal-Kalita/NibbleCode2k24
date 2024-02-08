@@ -1,0 +1,21 @@
+plugins:
+  - jekyll-relative-links
+  - jekyll-coffeescript
+  - jekyll-default-layout
+  - jekyll-gist
+  - jekyll-github-metadata
+  - jekyll-optional-front-matter
+  - jekyll-paginate
+  - jekyll-readme-index
+  - jekyll-titles-from-headings
+relative_links:
+  enabled: true
+  collections: true
+highlighter: rouge
+
+include:
+  - README.md
+
+kramdown:
+  math_engine: mathjax
+  syntax_highlighter: rouge 
