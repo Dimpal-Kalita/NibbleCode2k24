@@ -9,6 +9,8 @@
 │   ├── Others -> for other cases
 
 ```
+### [CONTEST URL](https://www.hackerearth.com/nibble-code-test)
+
 # EDITORIAL FOR NIBBLE CODE 2K24
 #### Problem Setters: Dimpal Kalita, Trilasha Mazumder
 
